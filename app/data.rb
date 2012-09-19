@@ -7,6 +7,10 @@ class Data
     @data[:users]
   end
 
+  def events
+    @data[:events]
+  end
+
   def empty?
     @data.nil?
   end

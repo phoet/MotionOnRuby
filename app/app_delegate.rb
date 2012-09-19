@@ -1,6 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    true
+    @window.rootViewController = UINavigationController.alloc.initWithRootViewController(ViewController.new)
+    @window.makeKeyAndVisible
   end
 end
