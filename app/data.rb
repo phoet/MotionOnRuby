@@ -1,6 +1,10 @@
 class Data
   def initialize(data)
-    @data = data
+    @data = BW::JSON.parse(data)
+  end
+
+  def users
+    @data[:users]
   end
 
   def empty?
