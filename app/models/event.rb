@@ -6,4 +6,12 @@ class Event
   def name
     @data['name']
   end
+
+  def description
+    @data['description']
+  end
+
+  def date
+    @data['date']
+  end
 end

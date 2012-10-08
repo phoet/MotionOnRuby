@@ -21,9 +21,8 @@ class EventsListController < UITableViewController
   end
 
   def tableView(tableView, accessoryButtonTappedForRowWithIndexPath:indexPath)
-    event = @events[indexPath.row]
     controller = UIApplication.sharedApplication.delegate.event_details_controller
+    controller.event = @events[indexPath.row]
     navigationController.pushViewController(controller, animated:true)
-    controller.showEventDetails(event)
   end
 end
