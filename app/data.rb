@@ -1,14 +1,8 @@
 class Data
+  attr_reader :users, :events
   def initialize(data)
     @data = BW::JSON.parse(data)
-  end
-
-  def users
-    @data[:users]
-  end
-
-  def events
-    @data[:events]
+    @events = @data[:events].map { |data| Event.new(data) }
   end
 
   def empty?
