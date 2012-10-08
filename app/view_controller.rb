@@ -20,7 +20,7 @@ class ViewController < UITableViewController
   end
 
   def tableView(tableView, accessoryButtonTappedForRowWithIndexPath:indexPath)
-    controller = DetailsController.new
+    controller = DetailsController.new(@rows[indexPath.row])
     navigationController.pushViewController(controller, animated:true)
   end
 end
