@@ -1,9 +1,11 @@
 describe Data do
-  # it "should download infos" do
-  #   Data.from_uri do |data|
-  #     data.should.not.be.empty
-  #   end
-  # end
+  it "should download infos" do
+    Data.from_uri do |data|
+      @results = data
+      resume
+    end
+    wait_max(1) { @results.should.not.be.empty }
+  end
 
   before do
     @raw_json = File.open("#{App.resources_path}/fixtures/data.json", "r") { |f| f.read }
@@ -11,6 +13,6 @@ describe Data do
 
   it "should load json data" do
     data = Data.new(@raw_json)
-    data.users.size.should.equal 259
+    data.events.size.should.equal 24
   end
 end
