@@ -1,6 +1,7 @@
 class EventsListController < UITableViewController
   def loadView
     self.tableView = UITableView.new
+    navigationItem.title = "Events"
     @events = []
     Data.from_uri do |data|
       @events = data.events
