@@ -1,4 +1,4 @@
-class Data
+class Api
   API_ENDPOINT = "http://hamburg.onruby.dev:5000/api.json"
 
   attr_reader :events

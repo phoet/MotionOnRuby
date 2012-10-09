@@ -6,7 +6,7 @@ class EventsListController < UITableViewController
   end
 
   def viewDidLoad
-    Data.from_uri do |data|
+    Api.from_uri do |data|
       @events = data.events
       self.tableView.reloadData
     end
