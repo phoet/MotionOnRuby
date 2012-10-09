@@ -1,4 +1,6 @@
 class Data
+  API_ENDPOINT = "http://hamburg.onruby.dev:5000/api.json"
+
   attr_reader :events
   def initialize(data)
     @data = BW::JSON.parse(data)
@@ -9,7 +11,7 @@ class Data
     @data.nil?
   end
 
-  def self.from_uri(uri="http://hamburg.onruby.dev:5000/api.json", &block)
+  def self.from_uri(uri=API_ENDPOINT, &block)
     BW::HTTP.get(uri) do |response|
       data = response.body.to_str
       block.call(new(data))
