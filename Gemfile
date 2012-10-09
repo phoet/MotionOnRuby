@@ -6,3 +6,5 @@ gem 'bubble-wrap', '1.1.4'
 gem 'ib', '0.1.4'
 
 gem 'webstub', '0.3.1'
+
+gem 'motion-testflight', '1.2'
